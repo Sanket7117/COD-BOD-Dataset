@@ -96,7 +96,7 @@ if __name__ == '__main__':
     executors = {
         "default": APThread(max_workers=20)
     }    
-
+    print("Started")
     scheduler = BackgroundScheduler(executors=executors, daemon=True)
     #scheduler.add_job(func=stater_function, trigger='cron', minute='*', second='1', args=[brokers])
     scheduler.add_job(Main_Function, 'interval',  minutes=10)
